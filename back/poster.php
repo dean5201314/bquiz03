@@ -38,7 +38,7 @@ foreach($pos as $idx => $po){
         <input type="button" value="往上">
         <input type="button" value="往下">
     </div>
-    <div>
+    <div style='color:black;'>
         <input type="hidden" name="id[]" value="<?=$po['id'];?>">
         <!-- input:checkbox*2+select>option*3 -->
         <input type="checkbox" name="sh[]" value="<?=$po['id'];?>" <?=($po['sh']==1)?'checked':'';?>>顯示
