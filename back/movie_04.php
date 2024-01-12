@@ -72,6 +72,7 @@ foreach($movies as $idx => $movie){
 <script>
 $(".show-btn").on("click",function(){
     let id=$(this).data('id');
+    // console.log($(this).data('id'));
     $.post("./api/show.php",{id},()=>{
         location.reload()
         //$(this).text(($(this).text()=='顯示')?"隱藏":"顯示");
@@ -97,10 +98,7 @@ $(".edit-btn").on("click",function(){
 
 })
 $(".del-btn").on("click",function(){
-    let id=$(this).data('id');
-    $.post("./api/del.php",{id,table:'movie'},()=>{
-        location.reload();
-    })
+
 })
 
 
