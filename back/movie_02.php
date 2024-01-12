@@ -27,7 +27,7 @@
 <div style="width:100%;height:415px;overflow:auto">
 <?php
 $movies=$Movie->all(" order by rank");
-foreach($movies as $idx => $movie){
+foreach($movies as $movie){
 ?>
 
 <div class="item">
@@ -50,40 +50,23 @@ foreach($movies as $idx => $movie){
             </div>
         </div>
         <div>
-            <button class='show-btn' data-id="<?=$movie['id'];?>">
-                <?=($movie['sh']==1)?'顯示':'隱蔵';?>
-            </button>
-            <button class='sw-btn'  
-                  data-id="<?=$movie['id'];?>" 
-                  data-sw="<?=($idx!==0)?$movies[$idx-1]['id']:$movie['id'];?>">往上</button>
-            <button class='sw-btn' 
-                  data-id="<?=$movie['id'];?>" 
-                  data-sw="<?=((count($movies)-1)!=$idx)?$movies[$idx+1]['id']:$movie['id'];?>">往下</button>
-            <button class="edit-btn" data-id="<?=$movie['id'];?>">編輯電影</button>
-            <button class="del-btn" data-id="<?=$movie['id'];?>">刪除電影</button>
+            <button>顯示</button>
+            <button>往上</button>
+            <button>往下</button>
+            <button>編輯電影</button>
+            <button>刪除電影</button>
         </div>
         <div>
             劇情介紹:<?=$movie['intro'];?>
         </div>
     </div>
 </div>
+
+
+
+
 <?php
 }
 ?>
 </div>
-<script>
-$(".show-btn").on("click",function(){
-    
-})
-$(".sw-btn").on("click",function(){
 
-})
-$(".edit-btn").on("click",function(){
-
-})
-$(".del-btn").on("click",function(){
-
-})
-
-
-</script>
