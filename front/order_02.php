@@ -21,14 +21,11 @@
 <script>
 getMovies();
 
-$("#movie").on("change",function(){
-    getDates($("#movie").val())
-})
-
 function getMovies(){
     $.get("./api/get_movies.php",(movies)=>{
         $("#movie").html(movies);
-        getDates($("#movie").val())
+        let id=$("#movie").val();
+        getDates(id)
     })
 }
 function getDates(id){
