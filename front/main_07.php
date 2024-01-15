@@ -126,9 +126,8 @@ function slide(){
                 $(".item").eq(next).slideDown(1000);
             });
         break;
-    }
 
-    now=next;
+    }
 
 }
 
@@ -152,15 +151,6 @@ $(".left,.right").on("click",function(){
     }
     $(".btn").animate({right:90*p})
 })
-
-$(".btns").hover(
-    function (){
-        clearInterval(timer)
-    },
-    function(){
-        timer=setInterval(()=>{slide()},3000)
-    }
-)
 
 </script>
 
