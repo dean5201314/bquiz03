@@ -33,7 +33,6 @@ function getMovies(){
 }
 function getDates(id){
     $.get("./api/get_dates.php",{id},(dates)=>{
-        console.log(dates)
             $("#date").html(dates);
             let movie=$("#movie").val()
             let date=$("#date").val()
