@@ -23,21 +23,16 @@ getMovies();
 
 function getMovies(){
     $.get("./api/get_movies.php",(movies)=>{
-        $("#movie").html(movies);
-        let id=$("#movie").val();
-        getDates(id)
+            $("#movie").html(movies);
     })
 }
-function getDates(id){
-    $.get("./api/get_dates.php",{id},(dates)=>{
+function getDates(){
+    $.get("./api/get_dates.php",(dates)=>{
             $("#date").html(dates);
-            let movie=$("#movie").val()
-            let date=$("#date").val()
-            getSessions(movie,date)
     })
 }
-function getSessions(movie,date){
-    $.get("./api/get_sessions.php",{movie,date},(sessions)=>{
+function getSessions(){
+    $.get("./api/get_sessions.php",(sessions)=>{
             $("#session").html(sessions);
     })
 }
