@@ -19,8 +19,6 @@
     </div>
 </div>
 <script>
-let url=new URL(window.location.href)
-
 getMovies();
 
 $("#movie").on("change",function(){
@@ -34,9 +32,6 @@ $("#date").on("change",function(){
 function getMovies(){
     $.get("./api/get_movies.php",(movies)=>{
         $("#movie").html(movies);
-        if(url.searchParams.has('id')){
-           $(`#movie option[value='${url.searchParams.get('id')}']`).prop('selected',true);
-        }
         getDates($("#movie").val())
     })
 }
