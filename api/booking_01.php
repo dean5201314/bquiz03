@@ -12,38 +12,10 @@ $session=$_GET['session'];
     width:540px;
     height:370px;
     margin:auto;
-    box-sizing: border-box;
-    padding:19px 112px 0 112px;
-    
- }
- .seat {
-    width: 63px;
-    height: 85px;
-}
-
-.seats {
-    display: flex;
-    flex-wrap: wrap;
-}   
+ }   
 </style>
 
-<div id="room">
-<div class="seats">
-    <?php
-    for($i=0;$i<20;$i++){
-
-        echo "<div class='seat'>";
-        echo "<div class='ct'>";
-        echo (floor($i/5)+1) . "排";
-        echo (($i%5)+1) . "號";
-        echo "</div>";
-        
-        echo "</div>";
-    }
-    ?>
-</div>
-
-</div>
+<div id="room"></div>
 <div id="info">
 <div>您選擇的電影是：<?=$movie['name'];?></div>
 <div>您選擇的時刻是：<?=$date;?> <?=$session;?></div>
