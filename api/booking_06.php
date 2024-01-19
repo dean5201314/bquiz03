@@ -3,17 +3,6 @@ include_once "db.php";
 $movie=$Movie->find($_GET['movie_id']);
 $date=$_GET['date'];
 $session=$_GET['session'];
-
-$ords=$Order->all(['movie'=>$movie['name'],
-                   'date'=>$date,
-                   'session'=>$session]);
-$seats=[];
-foreach($ords as $ord){
-    $tmp=unserialize($ord['seats']);
-    $seats=array_merge($seats,$tmp);
-}
-
-
 ?>
 <style>
  #room{
@@ -48,22 +37,16 @@ foreach($ords as $ord){
 <div class="seats">
     <?php
     for($i=0;$i<20;$i++){
-        
+
         echo "<div class='seat'>";
         echo "<div class='ct'>";
         echo (floor($i/5)+1) . "排";
         echo (($i%5)+1) . "號";
         echo "</div>";
         echo "<div class='ct'>";
-        if(in_array($i,$seats)){
-            echo "<img src='./icon/03D03.png'>";
-        }else{
-            echo "<img src='./icon/03D02.png'>";
-        }
+        echo "<img src='./icon/03D02.png'>";
         echo "</div>";
-        if(!in_array($i,$seats)){
-            echo "<input type='checkbox' name='chk' value='$i' class='chk'>";
-        }
+        echo "<input type='checkbox' name='chk' value='$i' class='chk'>";
         echo "</div>";
     }
     ?>
